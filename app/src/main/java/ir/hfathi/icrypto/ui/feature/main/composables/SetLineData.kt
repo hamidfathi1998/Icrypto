@@ -1,4 +1,4 @@
-package ir.hfathi.icrypto.ui.navigation.main.composables
+package ir.hfathi.icrypto.ui.feature.main.composables
 
 import com.github.mikephil.charting.charts.LineChart
 import com.github.mikephil.charting.data.LineData

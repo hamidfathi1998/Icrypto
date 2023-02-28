@@ -1,4 +1,4 @@
-package ir.hfathi.icrypto.ui.navigation.main.composables
+package ir.hfathi.icrypto.ui.feature.main.composables
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background

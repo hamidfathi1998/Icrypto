@@ -1,4 +1,4 @@
-package ir.hfathi.icrypto.ui.navigation.main.composables
+package ir.hfathi.icrypto.ui.feature.main.composables
 
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset

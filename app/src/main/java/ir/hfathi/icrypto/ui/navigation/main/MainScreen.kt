@@ -10,8 +10,8 @@ import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import ir.hfathi.icrypto.ui.navigation.main.composables.CoinDetailsBottomSheetContent
-import ir.hfathi.icrypto.ui.navigation.main.composables.MainBottomBarContent
+import ir.hfathi.icrypto.ui.feature.main.composables.CoinDetailsBottomSheetContent
+import ir.hfathi.icrypto.ui.feature.main.composables.MainBottomBarContent
 import ir.hfathi.icrypto.ui.theme.LighterGray
 import ir.hfathi.icrypto.ui.theme.TextWhite
 import kotlinx.coroutines.launch

@@ -22,7 +22,7 @@ fun BottomSheetShimmer(brush: Brush) {
         modifier = Modifier
             .background(brush)
             .fillMaxWidth()
-            .height((ScreenSize().height() * 0.75).dp)
+            .height((ScreenSize().height() * 0.80).dp)
             .padding(DP_20),
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = CenterHorizontally

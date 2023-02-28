@@ -40,7 +40,6 @@ fun HomeScreen(
                 openBottomSheet = openBottomSheet
             )
         }
-        it
     }
 }
 

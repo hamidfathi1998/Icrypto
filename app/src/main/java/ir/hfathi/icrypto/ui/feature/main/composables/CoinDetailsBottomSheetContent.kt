@@ -43,7 +43,7 @@ fun CoinDetailsBottomSheetBody(chartData: ChartResponseModel?, coinDetailsData: 
         modifier = Modifier
             .background(DarkGray)
             .fillMaxWidth()
-            .height((ScreenSize().height() * 0.75).dp)
+            .height((ScreenSize().height() * 0.80).dp)
             .padding(DP_12)
     ) {
         coinDetailsData?.coin?.let { coin ->

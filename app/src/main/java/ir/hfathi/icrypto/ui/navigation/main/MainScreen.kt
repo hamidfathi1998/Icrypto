@@ -40,7 +40,6 @@ fun MainScreen(
                     bottomSheetState.show()
                 }
             })
-            it
         }
     }
 }

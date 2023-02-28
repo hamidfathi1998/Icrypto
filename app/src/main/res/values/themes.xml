@@ -4,4 +4,10 @@
     <style name="Theme.Icrypto" parent="android:Theme.Material.Light.NoActionBar">
         <item name="android:statusBarColor">@color/purple_700</item>
     </style>
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/light_gray</item>
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/i_crypto_icon_round</item>
+        <item name="postSplashScreenTheme">@style/Theme.Icrypto</item>
+    </style>
+
 </resources>

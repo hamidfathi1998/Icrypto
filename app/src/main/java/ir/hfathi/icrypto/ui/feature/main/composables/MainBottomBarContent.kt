@@ -6,6 +6,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
@@ -21,7 +22,7 @@ fun MainBottomBarContent(navController: NavHostController = rememberNavControlle
     BottomBar(
         navController = navController,
         state = bottomBarState,
-        modifier = androidx.compose.ui.Modifier
+        modifier = Modifier
             .height(bottomBarHeight)
             .offset {
                 IntOffset(

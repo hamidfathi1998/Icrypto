@@ -6,7 +6,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import ir.hfathi.icrypto.ui.feature.home.HomeViewModel
 import ir.hfathi.icrypto.ui.feature.home.composables.HomeScreen
-import ir.hfathi.icrypto.ui.feature.news.NewsScreen
+import ir.hfathi.icrypto.ui.feature.news.composables.NewsScreen
 import ir.hfathi.icrypto.ui.feature.watchList.composables.WatchListScreen
 import ir.hfathi.icrypto.ui.navigation.root.Graph
 import org.koin.androidx.compose.getViewModel

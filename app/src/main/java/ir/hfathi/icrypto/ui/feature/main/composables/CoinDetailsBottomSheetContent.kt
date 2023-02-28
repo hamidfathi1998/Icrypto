@@ -11,7 +11,10 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.unit.dp
+import ir.hfathi.icrypto.model.model.dto.ChartDto
+import ir.hfathi.icrypto.model.model.dto.CoinDetailDto
 import ir.hfathi.icrypto.ui.feature.home.HomeViewModel
+import ir.hfathi.icrypto.ui.feature.main.composables.shimmer.BottomSheetShimmerContent
 import org.koin.androidx.compose.getViewModel
 import ir.hfathi.icrypto.ui.theme.*
 import ir.hfathi.icrypto.utils.ScreenSize
@@ -24,7 +27,17 @@ fun CoinDetailsBottomSheetContent() {
     val state = homeViewModel.viewState.value
     val chartData = state.coinChartData
     val coinDetailsData = state.coinDetailsData
+    when {
+        state.isLoading || state.isCoinDetailLoading -> BottomSheetShimmerContent()
+        else -> CoinDetailsBottomSheetBody(
+            chartData = chartData,
+            coinDetailsData = coinDetailsData
+        )
+    }
+}
 
+@Composable
+fun CoinDetailsBottomSheetBody(chartData: ChartDto?, coinDetailsData: CoinDetailDto?) {
     Box(
         modifier = Modifier
             .background(DarkGray)

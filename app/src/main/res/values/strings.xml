@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Icrypto</string>
+    <string name="network_error_description">A network error occurred. Check your connection or try again</string>
+    <string name="network_error_title">Oh no!</string>
+    <string name="network_error_retry_button_text">Try again</string>
 </resources>

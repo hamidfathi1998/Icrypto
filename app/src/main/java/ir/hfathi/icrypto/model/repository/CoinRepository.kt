@@ -1,14 +1,18 @@
 package ir.hfathi.icrypto.model.repository
 
-import ir.hfathi.icrypto.model.model.CoinChartModel
-import ir.hfathi.icrypto.model.model.CoinDetailModel
-import ir.hfathi.icrypto.model.model.CoinModel
+import ir.hfathi.icrypto.model.model.dto.ChartDto
+import ir.hfathi.icrypto.model.model.dto.CoinDetailDto
+import ir.hfathi.icrypto.model.model.dto.CoinsDto
+import ir.hfathi.icrypto.model.model.response.CoinPriceResponseModel
+import kotlinx.coroutines.flow.MutableStateFlow
 
 interface CoinRepository {
 
-    suspend fun getAllCryptoCurrency() : Result<List<CoinModel>>
+    suspend fun getCoins(): Result<CoinsDto>
 
-    suspend fun getSpecificCryptoDetails(coinId: String) : Result<CoinDetailModel>
+    suspend fun getCoinById(coinId: String): Result<CoinDetailDto>
 
-    suspend fun getCryptoChartData(coinId: String) : Result<CoinChartModel>
+    suspend fun getChartsData(coinId: String): Result<ChartDto>
+
+    fun getStreamCryptoPrice(data: MutableStateFlow<CoinPriceResponseModel>)
 }

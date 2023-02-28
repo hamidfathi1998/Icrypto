@@ -1,9 +1,9 @@
-package ir.hfathi.icrypto.model.model
+package ir.hfathi.icrypto.model.model.dto
 
-data class CoinModel(
+import ir.hfathi.icrypto.model.model.response.CoinById
+
+data class CoinDetail(
     val availableSupply: Double,
-    val contractAddress: String,
-    val decimals: Int,
     val exp: List<String>,
     val icon: String,
     val id: String,
@@ -15,7 +15,6 @@ data class CoinModel(
     val priceChange1h: Double,
     val priceChange1w: Double,
     val rank: Int,
-    val redditUrl: String,
     val symbol: String,
     val totalSupply: Double,
     val twitterUrl: String,

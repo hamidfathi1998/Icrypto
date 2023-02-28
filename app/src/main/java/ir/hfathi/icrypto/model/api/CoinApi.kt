@@ -1,33 +1,30 @@
 package ir.hfathi.icrypto.model.api
 
-import ir.hfathi.icrypto.model.api.CoinPeriod.PERIOD_24h
-import ir.hfathi.icrypto.model.api.Endpoints.GET_ALL_CRYPTO_CURRENCY
-import ir.hfathi.icrypto.model.api.Endpoints.GET_CRYPTO_CHART_DATA
-import ir.hfathi.icrypto.model.api.Endpoints.GET_SPECIFIC_CRYPTO_DETAILS
-import ir.hfathi.icrypto.model.model.CoinChartModel
-import ir.hfathi.icrypto.model.model.CoinDetailModel
-import ir.hfathi.icrypto.model.model.CoinModel
+import ir.hfathi.icrypto.model.model.dto.ChartDto
+import ir.hfathi.icrypto.model.model.dto.CoinDetailDto
+import ir.hfathi.icrypto.model.model.dto.CoinsDto
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface CoinApi {
 
-    @GET(GET_ALL_CRYPTO_CURRENCY)
-    suspend fun getAllCryptoCurrency(
-        @Query("currency") currency: String = CoinCurrency.CURRENCY_USD,
+    @GET("v1/coins")
+    suspend fun getCoins(
+        @Query("currency") currency: String = "USD",
         @Query("skip") skip: Int = 0
-    ): List<CoinModel>
+    ): CoinsDto
 
-    @GET(GET_SPECIFIC_CRYPTO_DETAILS)
-    suspend fun getSpecificCryptoDetails(
+    @GET("v1/coins/{coinId}")
+    suspend fun getCoinById(
         @Path("coinId") coinId: String
-    ): CoinDetailModel
+    ): CoinDetailDto
 
-    @GET(GET_CRYPTO_CHART_DATA)
-    suspend fun getCryptoChartData(
+    @GET("v1/charts")
+    suspend fun getChartsData(
         @Query("coinId") coinId: String,
-        @Query("period") period: String = PERIOD_24h
-    ): CoinChartModel
+        @Query("period") period: String = "24h" //available periods - 24h | 1w | 1m | 3m | 6m | 1y | all
+    ): ChartDto
+
 
 }

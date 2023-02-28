@@ -2,7 +2,6 @@ package ir.hfathi.icrypto.di
 
 import ir.hfathi.icrypto.model.api.CoinApi
 import ir.hfathi.icrypto.model.api.Endpoints
-import ir.hfathi.icrypto.model.repository.viewModelModule
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

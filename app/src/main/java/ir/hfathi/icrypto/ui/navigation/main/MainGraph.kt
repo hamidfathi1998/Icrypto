@@ -4,14 +4,20 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import ir.hfathi.icrypto.ui.feature.coin.CoinScreen
+import ir.hfathi.icrypto.ui.feature.home.HomeViewModel
+import ir.hfathi.icrypto.ui.feature.home.composables.HomeScreen
 import ir.hfathi.icrypto.ui.feature.news.NewsScreen
-import ir.hfathi.icrypto.ui.feature.watchList.WatchListScreen
+import ir.hfathi.icrypto.ui.feature.watchList.composables.WatchListScreen
 import ir.hfathi.icrypto.ui.navigation.root.Graph
+import org.koin.androidx.compose.getViewModel
 
 @Composable
-fun MainGraph(navController: NavHostController) {
-    
+fun MainGraph(
+    navController: NavHostController,
+    openBottomSheet: () -> Unit
+) {
+    val homeViewModel = getViewModel<HomeViewModel>()
+
     NavHost(
         navController = navController,
         route = Graph.MAIN,
@@ -19,19 +25,23 @@ fun MainGraph(navController: NavHostController) {
     ) {
         composable(
             route = Screens.CoinsWatchList.route
-        ){
+        ) {
             WatchListScreen()
         }
 
         composable(
             route = Screens.CoinsScreen.route
-        ){
-            CoinScreen()
+        ) {
+            HomeScreen(
+                state = homeViewModel.viewState.value,
+                onEventSent = { event -> homeViewModel.setEvent(event) },
+                openBottomSheet = openBottomSheet
+            )
         }
 
         composable(
             route = Screens.CoinsNews.route
-        ){
+        ) {
             NewsScreen()
         }
 

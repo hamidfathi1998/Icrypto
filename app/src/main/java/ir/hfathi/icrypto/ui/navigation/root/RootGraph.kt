@@ -7,7 +7,8 @@ import androidx.navigation.compose.composable
 import ir.hfathi.icrypto.ui.navigation.main.MainScreen
 
 @Composable
-fun RootNavigationGraph(navHostController: NavHostController) {
+fun RootNavigationGraph(navHostController: NavHostController){
+
     NavHost(
         navController = navHostController,
         route = Graph.ROOT,

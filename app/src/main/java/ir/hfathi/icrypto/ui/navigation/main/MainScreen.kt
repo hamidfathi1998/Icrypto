@@ -3,62 +3,45 @@ package ir.hfathi.icrypto.ui.navigation.main
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutVertically
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.offset
 import androidx.compose.material.*
 import androidx.compose.runtime.*
-import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.geometry.Offset
-import androidx.compose.ui.input.nestedscroll.NestedScrollConnection
-import androidx.compose.ui.input.nestedscroll.NestedScrollSource
-import androidx.compose.ui.input.nestedscroll.nestedScroll
-import androidx.compose.ui.platform.LocalDensity
-import androidx.compose.ui.unit.IntOffset
-import androidx.compose.ui.unit.dp
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import ir.hfathi.icrypto.ui.navigation.main.composables.CoinDetailsBottomSheetContent
+import ir.hfathi.icrypto.ui.navigation.main.composables.MainBottomBarContent
 import ir.hfathi.icrypto.ui.theme.LighterGray
-import ir.hfathi.icrypto.ui.theme.Purple700
 import ir.hfathi.icrypto.ui.theme.TextWhite
-import kotlin.math.roundToInt
+import kotlinx.coroutines.launch
 
+@OptIn(ExperimentalMaterialApi::class)
 @Composable
-fun MainScreen(navController: NavHostController = rememberNavController()) {
+fun MainScreen(
+    navController: NavHostController = rememberNavController()
+) {
+    val coroutineScope = rememberCoroutineScope()
+    val bottomSheetState =
+        rememberModalBottomSheetState(
+            initialValue = ModalBottomSheetValue.Hidden,
+            skipHalfExpanded = true
+        )
 
-    val bottomBarState = rememberSaveable { (mutableStateOf(true)) }
-    val bottomBarHeight = 56.dp
-    val bottomBarHeightPx = with(LocalDensity.current) { bottomBarHeight.roundToPx().toFloat() }
-    val bottomBarOffsetHeightPx = remember { mutableStateOf(0f) }
-    val nestedScrollConnection = remember {
-        object : NestedScrollConnection {
-            override fun onPreScroll(available: Offset, source: NestedScrollSource): Offset {
-                val delta = available.y
-                val newOffset = bottomBarOffsetHeightPx.value + delta
-                bottomBarOffsetHeightPx.value = newOffset.coerceIn(-bottomBarHeightPx, 0f)
-
-                return Offset.Zero
-            }
+    ModalBottomSheetLayout(
+        sheetContent = { CoinDetailsBottomSheetContent() },
+        sheetState = bottomSheetState
+    ) {
+        Scaffold(
+            bottomBar = { MainBottomBarContent(navController = navController) }
+        ) {
+            MainGraph(navController = navController, openBottomSheet = {
+                coroutineScope.launch {
+                    bottomSheetState.show()
+                }
+            })
+            it
         }
-    }
-
-    Scaffold (
-        modifier = Modifier.nestedScroll(nestedScrollConnection),
-        bottomBar ={
-             BottomBar(
-                 navController = navController,
-                 state = bottomBarState,
-                 modifier = Modifier
-                     .height(bottomBarHeight)
-                     .offset { IntOffset(x = 0, y= -bottomBarOffsetHeightPx.value.roundToInt()) }
-             )
-
-        }
-            )
-    {
-        MainGraph(navController = navController)
     }
 }
 
@@ -78,10 +61,10 @@ fun BottomBar(
         visible = state.value,
         enter = slideInVertically(initialOffsetY = { it }),
         exit = slideOutVertically(targetOffsetY = { it }),
-    ){
+    ) {
         BottomNavigation(
             modifier = modifier,
-            backgroundColor = Purple700,
+            backgroundColor = LighterGray,
         ) {
             val navBackStackEntry by navController.currentBackStackEntryAsState()
             val currentRoute = navBackStackEntry?.destination?.route
@@ -93,21 +76,20 @@ fun BottomBar(
                         Text(text = screen.title!!)
                     },
                     icon = {
-                        Icon(imageVector = screen.icon!! , contentDescription = null)
+                        Icon(imageVector = screen.icon!!, contentDescription = null)
                     },
 
                     selected = currentRoute == screen.route,
 
                     onClick = {
                         navController.navigate(screen.route) {
-                            popUpTo(navController.graph.findStartDestination().id){
+                            popUpTo(navController.graph.findStartDestination().id) {
                                 saveState = true
                             }
                             launchSingleTop = true
-                            restoreState =true
+                            restoreState = true
                         }
                     },
-
                     alwaysShowLabel = false,
                     selectedContentColor = TextWhite,
                     unselectedContentColor = TextWhite.copy(alpha = ContentAlpha.disabled)

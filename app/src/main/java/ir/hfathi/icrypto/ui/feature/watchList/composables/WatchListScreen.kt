@@ -1,4 +1,4 @@
-package ir.hfathi.icrypto.ui.feature.coin
+package ir.hfathi.icrypto.ui.feature.watchList.composables
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -10,9 +10,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun CoinScreen() {
+fun WatchListScreen() {
     Text(
-        text = "Coin Screen",
+        text = "WatchList Screen",
         color = MaterialTheme.colors.error,
         textAlign = TextAlign.Center,
         modifier = Modifier

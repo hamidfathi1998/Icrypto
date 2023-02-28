@@ -6,10 +6,12 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.unit.dp
+import ir.hfathi.icrypto.ui.theme.DP_12
 import ir.hfathi.icrypto.ui.theme.TextWhite
+import ir.hfathi.icrypto.R
 
 @Composable
 fun CoinInformation(
@@ -21,13 +23,11 @@ fun CoinInformation(
     rank: String
 ) {
     Column(modifier = modifier) {
-
-        CoinInfoRow(value = rank, title = "Rank")
-        CoinInfoRow(value = marketCap, title = "Market cap")
-        CoinInfoRow(value = volume, title = "Volume")
-        CoinInfoRow(value = availableSupply, title = "Available supply")
-        CoinInfoRow(value = totalSupply, title = "Total supply")
-
+        CoinInfoRow(value = rank, title = stringResource(id = R.string.rank))
+        CoinInfoRow(value = marketCap, title = stringResource(id = R.string.marketCap))
+        CoinInfoRow(value = volume, title = stringResource(id = R.string.volume))
+        CoinInfoRow(value = availableSupply, title = stringResource(id = R.string.availableSupply))
+        CoinInfoRow(value = totalSupply, title = stringResource(id = R.string.totalSupply))
     }
 }
 
@@ -48,7 +48,7 @@ fun CoinInfoRow(
                 color = TextWhite,
                 textAlign = TextAlign.Start,
                 style = MaterialTheme.typography.body2,
-                modifier = Modifier.padding(bottom = 12.dp)
+                modifier = Modifier.padding(bottom = DP_12)
             )
 
                 Text(

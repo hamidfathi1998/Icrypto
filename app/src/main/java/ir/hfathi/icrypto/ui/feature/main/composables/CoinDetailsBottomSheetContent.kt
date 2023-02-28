@@ -11,8 +11,9 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.unit.dp
-import ir.hfathi.icrypto.model.model.dto.ChartDto
-import ir.hfathi.icrypto.model.model.dto.CoinDetailDto
+import ir.hfathi.icrypto.model.api.CoinCurrency
+import ir.hfathi.icrypto.model.model.response.ChartResponseModel
+import ir.hfathi.icrypto.model.model.response.CoinDetailResponseModel
 import ir.hfathi.icrypto.ui.feature.home.HomeViewModel
 import ir.hfathi.icrypto.ui.feature.main.composables.shimmer.BottomSheetShimmerContent
 import org.koin.androidx.compose.getViewModel
@@ -37,13 +38,13 @@ fun CoinDetailsBottomSheetContent() {
 }
 
 @Composable
-fun CoinDetailsBottomSheetBody(chartData: ChartDto?, coinDetailsData: CoinDetailDto?) {
+fun CoinDetailsBottomSheetBody(chartData: ChartResponseModel?, coinDetailsData: CoinDetailResponseModel?) {
     Box(
         modifier = Modifier
             .background(DarkGray)
             .fillMaxWidth()
             .height((ScreenSize().height() * 0.75).dp)
-            .padding(12.dp)
+            .padding(DP_12)
     ) {
         coinDetailsData?.coin?.let { coin ->
             LazyColumn(
@@ -69,9 +70,9 @@ fun CoinDetailsBottomSheetBody(chartData: ChartDto?, coinDetailsData: CoinDetail
                             .fillMaxWidth()
                             .background(
                                 color = LighterGray,
-                                shape = RoundedCornerShape(25.dp)
+                                shape = RoundedCornerShape(DP_25)
                             )
-                            .padding(start = 16.dp, top = 16.dp, end = 16.dp),
+                            .padding(start = DP_16, top = DP_16, end = DP_16),
                         rank = "${coin.rank}",
                         volume = numbersToCurrency(coin.volume.toInt())!!,
                         marketCap = numbersToCurrency(coin.marketCap.toInt())!!,
@@ -86,9 +87,9 @@ fun CoinDetailsBottomSheetBody(chartData: ChartDto?, coinDetailsData: CoinDetail
                         LinkButton(
                             title = "Twitter",
                             modifier = Modifier
-                                .padding(start = 20.dp, bottom = 20.dp, top = 20.dp)
+                                .padding(start = DP_20, bottom = DP_20, top = DP_20)
                                 .clip(RoundedCornerShape(35.dp))
-                                .height(45.dp)
+                                .height(DP_45)
                                 .background(Twitter)
                                 .weight(1f)
                                 .clickable {
@@ -99,9 +100,9 @@ fun CoinDetailsBottomSheetBody(chartData: ChartDto?, coinDetailsData: CoinDetail
                         LinkButton(
                             title = "Website",
                             modifier = Modifier
-                                .padding(start = 20.dp, bottom = 20.dp, top = 20.dp)
-                                .clip(RoundedCornerShape(35.dp))
-                                .height(45.dp)
+                                .padding(start = DP_20, bottom = DP_20, top = DP_20)
+                                .clip(RoundedCornerShape(DP_35))
+                                .height(DP_45)
                                 .background(LighterGray)
                                 .weight(1f)
                                 .clickable {
@@ -117,7 +118,7 @@ fun CoinDetailsBottomSheetBody(chartData: ChartDto?, coinDetailsData: CoinDetail
 
 fun numbersToCurrency(number: Int): String? {
     val numberFormat = NumberFormat.getCurrencyInstance()
-    numberFormat.currency = Currency.getInstance("USD")
+    numberFormat.currency = Currency.getInstance(CoinCurrency.CURRENCY_USD.currency)
     return numberFormat.format(number)
 }
 

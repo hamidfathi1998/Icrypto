@@ -5,8 +5,10 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import com.google.accompanist.swiperefresh.SwipeRefresh
 import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
+import ir.hfathi.icrypto.R
 import ir.hfathi.icrypto.ui.feature.common.NetworkError
 import ir.hfathi.icrypto.ui.feature.home.HomeContract
 import ir.hfathi.icrypto.ui.feature.home.composables.shimmer.HomeShimmerContent
@@ -25,7 +27,7 @@ fun HomeScreen(
         scaffoldState = scaffoldState,
         topBar = {
             CoinsScreenTopBar(
-                title = "Live Prices",
+                title = stringResource(id = R.string.livePrices),
             )
         },
     ) {

@@ -1,8 +1,8 @@
 package ir.hfathi.icrypto.ui.feature.home
 
-import ir.hfathi.icrypto.model.model.dto.ChartDto
-import ir.hfathi.icrypto.model.model.dto.Coin
-import ir.hfathi.icrypto.model.model.dto.CoinDetailDto
+import ir.hfathi.icrypto.model.model.response.ChartResponseModel
+import ir.hfathi.icrypto.model.model.response.Coin
+import ir.hfathi.icrypto.model.model.response.CoinDetailResponseModel
 import ir.hfathi.icrypto.model.model.response.Coins
 import ir.hfathi.icrypto.ui.base.ViewEvent
 import ir.hfathi.icrypto.ui.base.ViewSideEffect
@@ -19,8 +19,8 @@ class HomeContract {
 
     data class State(
         val coinInformationData: List<Coin>,
-        val coinDetailsData: CoinDetailDto?,
-        val coinChartData: ChartDto?,
+        val coinDetailsData: CoinDetailResponseModel?,
+        val coinChartData: ChartResponseModel?,
         val isPullToRefresh: Boolean,
         val isError: Boolean,
         val isLoading: Boolean,

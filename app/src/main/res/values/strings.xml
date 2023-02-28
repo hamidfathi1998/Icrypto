@@ -3,4 +3,17 @@
     <string name="network_error_description">A network error occurred. Check your connection or try again</string>
     <string name="network_error_title">Oh no!</string>
     <string name="network_error_retry_button_text">Try again</string>
+    <string name="icon">Icon</string>
+    <string name="toggle">Toggle Drawer</string>
+    <string name="livePrices">Live Prices</string>
+    <string name="chartValues">chart values</string>
+    <string name="arrow">arrow</string>
+    <string name="rank">Rank</string>
+    <string name="marketCap">Market cap</string>
+    <string name="volume">Volume</string>
+    <string name="availableSupply">Available supply</string>
+    <string name="totalSupply">Total supply</string>
+    <string name="newsScreen">News Screen</string>
+    <string name="watchListScreen">WatchList Screen</string>
+
 </resources>

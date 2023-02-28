@@ -1,6 +1,5 @@
-package ir.hfathi.icrypto.model.model.dto
+package ir.hfathi.icrypto.model.model.response
 
-import ir.hfathi.icrypto.model.model.response.CoinById
 
 data class CoinDetail(
     val availableSupply: Double,

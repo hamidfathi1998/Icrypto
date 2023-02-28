@@ -6,10 +6,10 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
-import ir.hfathi.icrypto.ui.theme.TextWhite
+import ir.hfathi.icrypto.ui.theme.*
 
 @Composable
 fun TopBarCoinDetail(
@@ -20,17 +20,17 @@ fun TopBarCoinDetail(
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(top = 16.dp)
-            .requiredHeight(40.dp),
+            .padding(top = DP_16)
+            .requiredHeight(DP_40),
         contentAlignment = Alignment.Center,
     ) {
         Row(horizontalArrangement = Arrangement.SpaceBetween) {
             AsyncImage(
                 model = icon,
-                contentDescription = "Icon",
+                contentDescription = stringResource(id = ir.hfathi.icrypto.R.string.icon),
                 modifier = Modifier
-                    .size(30.dp)
-                    .padding(end = 5.dp)
+                    .size(DP_30)
+                    .padding(end = DP_5)
             )
 
             Text(

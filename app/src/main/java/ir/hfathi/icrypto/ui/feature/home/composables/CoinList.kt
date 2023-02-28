@@ -6,10 +6,10 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
 import ir.hfathi.icrypto.model.model.request.symbolContainStreamCoinArg
 import ir.hfathi.icrypto.ui.feature.home.HomeContract
 import ir.hfathi.icrypto.ui.feature.home.HomeViewModel
+import ir.hfathi.icrypto.ui.theme.DP_56
 import org.koin.androidx.compose.getViewModel
 
 @Composable
@@ -22,7 +22,7 @@ fun CoinList(
     val homeViewModel = getViewModel<HomeViewModel>()
 
     LazyColumn(
-        modifier = Modifier.padding(bottom = 56.dp),
+        modifier = Modifier.padding(bottom = DP_56),
         state = lazyListState
     ) {
         items(items = state.coinInformationData) { coins ->

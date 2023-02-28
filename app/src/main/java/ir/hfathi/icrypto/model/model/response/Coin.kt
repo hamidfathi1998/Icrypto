@@ -1,6 +1,4 @@
-package ir.hfathi.icrypto.model.model.dto
-
-import ir.hfathi.icrypto.model.model.response.Coins
+package ir.hfathi.icrypto.model.model.response
 
 
 data class Coin(

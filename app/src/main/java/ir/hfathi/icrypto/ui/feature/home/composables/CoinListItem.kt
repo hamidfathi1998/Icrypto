@@ -13,13 +13,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
-import ir.hfathi.icrypto.model.model.dto.Coin
-import ir.hfathi.icrypto.model.model.dto.toCoins
+import ir.hfathi.icrypto.R
+import ir.hfathi.icrypto.model.model.response.Coin
+import ir.hfathi.icrypto.model.model.response.toCoins
 import ir.hfathi.icrypto.ui.feature.home.HomeContract
 import ir.hfathi.icrypto.ui.feature.home.HomeViewModel
 import ir.hfathi.icrypto.ui.theme.*
@@ -50,7 +50,7 @@ fun CoinListItem(
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(20.dp)
+            .padding(DP_20)
             .clickable {
                 onEventSent(
                     HomeContract.Event.CoinSelection(coin = coins.toCoins())
@@ -69,14 +69,14 @@ fun CoinListItem(
                 modifier = Modifier
                     .clip(CircleShape)
                     .background(LighterGray)
-                    .size(50.dp)
+                    .size(DP_50)
             ) {
 
                 AsyncImage(
                     model = coins.icon,
-                    contentDescription = "Icon",
+                    contentDescription = stringResource(R.string.network_error_title),
                     modifier = Modifier
-                        .size(20.dp)
+                        .size(DP_20)
                         .align(Alignment.Center)
                 )
             }
@@ -98,14 +98,14 @@ fun CoinListItem(
             Row {
                 Box(
                     modifier = Modifier
-                        .clip(RoundedCornerShape(2.dp))
+                        .clip(RoundedCornerShape(DP_2))
                         .background(LighterGray)
-                        .size(16.dp)
+                        .size(DP_16)
                         .align(Alignment.CenterVertically)
                 ) {
                     Text(
                         text = coins.rank.toString(),
-                        fontSize = 10.sp,
+                        fontSize = SP_10,
                         fontWeight = FontWeight.Bold,
                         color = Gold,
                         modifier = Modifier
@@ -114,11 +114,11 @@ fun CoinListItem(
                 }
                 Text(
                     text = coins.symbol,
-                    fontSize = 12.sp,
+                    fontSize = SP_12,
                     fontWeight = FontWeight.Bold,
                     color = Color.Gray,
                     modifier = Modifier
-                        .padding(start = 5.dp)
+                        .padding(start = DP_5)
                 )
 
             }
@@ -139,7 +139,7 @@ fun CoinListItem(
 
             Text(
                 text = coins.priceChange1d.toString() + "%",
-                fontSize = 12.sp,
+                fontSize = SP_12,
                 fontWeight = FontWeight.Bold,
                 color = if (coins.priceChange1d < 0) CustomRed else CustomGreen
             )

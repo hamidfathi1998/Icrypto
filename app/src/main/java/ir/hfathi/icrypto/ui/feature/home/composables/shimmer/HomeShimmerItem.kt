@@ -12,7 +12,6 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import ir.hfathi.icrypto.ui.theme.*
 
 @Composable
@@ -21,47 +20,47 @@ fun HomeShimmerItem(brush: Brush){
         modifier = Modifier
             .background(brush)
             .fillMaxWidth()
-            .padding(20.dp),
+            .padding(DP_20),
         verticalAlignment = Alignment.CenterVertically,
     ) {
         Box(
             modifier = Modifier
                 .clip(CircleShape)
                 .background(LighterGray)
-                .size(50.dp)
+                .size(DP_50)
         )
 
         Column(
             horizontalAlignment = Alignment.Start,
             modifier = Modifier
                 .weight(5f)
-                .padding(start = 16.dp)
+                .padding(start = DP_16)
         ) {
             Box(
                 modifier = Modifier
-                    .width(80.dp)
-                    .height(15.dp)
+                    .width(DP_80)
+                    .height(DP_15)
                     .background(LighterGray)
             )
 
-            Spacer(modifier = Modifier.height(8.dp))
+            Spacer(modifier = Modifier.height(DP_8))
 
             Row() {
                 Box(
                     modifier = Modifier
-                        .clip(RoundedCornerShape(2.dp))
+                        .clip(RoundedCornerShape(DP_2))
                         .background(LighterGray)
-                        .size(15.dp)
+                        .size(DP_15)
                 )
 
-                Spacer(modifier = Modifier.width(8.dp))
+                Spacer(modifier = Modifier.width(DP_8))
 
                 Box(
                     modifier = Modifier
-                        .clip(RoundedCornerShape(2.dp))
+                        .clip(RoundedCornerShape(DP_2))
                         .background(LighterGray)
-                        .width(56.dp)
-                        .height(15.dp)
+                        .width(DP_56)
+                        .height(DP_15)
                 )
             }
 
@@ -74,19 +73,19 @@ fun HomeShimmerItem(brush: Brush){
         ) {
             Box(
                 modifier = Modifier
-                    .width(60.dp)
-                    .height(15.dp)
+                    .width(DP_60)
+                    .height(DP_15)
                     .background(LighterGray)
             )
 
-            Spacer(modifier = Modifier.height(8.dp))
+            Spacer(modifier = Modifier.height(DP_8))
 
             Box(
                 modifier = Modifier
-                    .clip(RoundedCornerShape(2.dp))
+                    .clip(RoundedCornerShape(DP_2))
                     .background(LighterGray)
-                    .width(30.dp)
-                    .height(15.dp)
+                    .width(DP_30)
+                    .height(DP_15)
             )
         }
     }

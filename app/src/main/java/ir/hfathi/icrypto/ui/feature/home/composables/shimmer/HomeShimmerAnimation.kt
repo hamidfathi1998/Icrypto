@@ -5,6 +5,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
+import ir.hfathi.icrypto.ui.theme.ShimmerAnimDurationMillis
 import ir.hfathi.icrypto.ui.theme.ShimmerColorShades
 
 @Composable
@@ -15,7 +16,7 @@ fun HomeShimmerAnimation(
         initialValue = 0f,
         targetValue = 1000f,
         animationSpec = infiniteRepeatable(
-            tween(durationMillis = 800, easing = FastOutSlowInEasing),
+            tween(durationMillis = ShimmerAnimDurationMillis, easing = FastOutSlowInEasing),
             RepeatMode.Reverse
         )
     )

@@ -8,16 +8,16 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.IntOffset
-import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import ir.hfathi.icrypto.ui.navigation.main.BottomBar
+import ir.hfathi.icrypto.ui.theme.DP_56
 import kotlin.math.roundToInt
 
 @Composable
 fun MainBottomBarContent(navController: NavHostController = rememberNavController()) {
     val bottomBarState = rememberSaveable { (mutableStateOf(true)) }
-    val bottomBarHeight = 56.dp
+    val bottomBarHeight = DP_56
     val bottomBarOffsetHeightPx = remember { mutableStateOf(0f) }
     BottomBar(
         navController = navController,

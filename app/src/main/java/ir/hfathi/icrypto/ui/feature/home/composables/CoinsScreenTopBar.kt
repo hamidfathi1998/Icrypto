@@ -11,8 +11,10 @@ import androidx.compose.material.icons.filled.Menu
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.dp
+import ir.hfathi.icrypto.ui.theme.DP_24
+import ir.hfathi.icrypto.ui.theme.DP_32
 import ir.hfathi.icrypto.ui.theme.TextWhite
 
 @Composable
@@ -26,13 +28,13 @@ fun CoinsScreenTopBar(
         horizontalArrangement = Arrangement.Start,
         modifier = modifier
             .fillMaxWidth()
-            .padding(top = 24.dp)
+            .padding(top = DP_24)
     ) {
 
         IconButton(onClick = { }) {
             Icon(
                 imageVector = Icons.Default.Menu,
-                contentDescription = "Toggle Drawer",
+                contentDescription = stringResource(id = ir.hfathi.icrypto.R.string.toggle),
             )
         }
 
@@ -44,7 +46,7 @@ fun CoinsScreenTopBar(
                 color = TextWhite,
                 modifier = Modifier
                     .align(Alignment.Center)
-                    .padding(end = 32.dp)
+                    .padding(end = DP_32)
             )
         }
 

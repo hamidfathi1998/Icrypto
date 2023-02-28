@@ -12,20 +12,20 @@ sealed class Screens(
     val icon: ImageVector?= null
     ) {
     object CoinsWatchList: Screens(
-        route = "coins_watch_list",
-        title = "WatchList",
+        route = ScreensRoute.WATCH_LIST.route,
+        title = ScreensRoute.WATCH_LIST.title,
         icon = Icons.Default.Favorite
     )
 
     object CoinsScreen: Screens(
-        route = "coins_screen",
-        title = "Home",
+        route = ScreensRoute.HOME.route,
+        title = ScreensRoute.HOME.title,
         icon = Icons.Default.Home
     )
 
     object CoinsNews: Screens(
-        route = "coins_news",
-        title = "News",
+        route = ScreensRoute.NEWS.route,
+        title = ScreensRoute.NEWS.title,
         icon = Icons.Outlined.Info
     )
 

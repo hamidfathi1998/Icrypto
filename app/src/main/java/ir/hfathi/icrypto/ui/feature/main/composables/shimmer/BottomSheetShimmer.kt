@@ -23,15 +23,15 @@ fun BottomSheetShimmer(brush: Brush) {
             .background(brush)
             .fillMaxWidth()
             .height((ScreenSize().height() * 0.75).dp)
-            .padding(20.dp),
+            .padding(DP_20),
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = CenterHorizontally
     ) {
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(top = 16.dp)
-                .requiredHeight(40.dp),
+                .padding(top = DP_16)
+                .requiredHeight(DP_40),
             contentAlignment = Alignment.Center,
         ) {
             Row(horizontalArrangement = Arrangement.SpaceBetween) {
@@ -39,59 +39,59 @@ fun BottomSheetShimmer(brush: Brush) {
                     modifier = Modifier
                         .clip(CircleShape)
                         .background(LighterGray)
-                        .size(40.dp)
+                        .size(DP_40)
                 )
 
-                Spacer(modifier = Modifier.width(8.dp))
+                Spacer(modifier = Modifier.width(DP_8))
 
                 Box(
                     modifier = Modifier
-                        .padding(top = 12.dp)
-                        .width(80.dp)
-                        .height(15.dp)
+                        .padding(top = DP_12)
+                        .width(DP_80)
+                        .height(DP_15)
                         .background(LighterGray)
                 )
             }
         }
 
-        Spacer(modifier = Modifier.height(12.dp))
+        Spacer(modifier = Modifier.height(DP_12))
 
         Column(
             horizontalAlignment = Alignment.Start,
             modifier = Modifier
-                .padding(start = 16.dp)
+                .padding(start = DP_16)
         ) {
             Box(
                 modifier = Modifier
-                    .width(80.dp)
-                    .height(15.dp)
+                    .width(DP_80)
+                    .height(DP_15)
                     .background(LighterGray)
             )
 
-            Spacer(modifier = Modifier.height(8.dp))
+            Spacer(modifier = Modifier.height(DP_8))
 
             Row {
                 Box(
                     modifier = Modifier
-                        .clip(RoundedCornerShape(2.dp))
+                        .clip(RoundedCornerShape(DP_2))
                         .background(LighterGray)
-                        .size(15.dp)
+                        .size(DP_15)
                 )
 
-                Spacer(modifier = Modifier.width(8.dp))
+                Spacer(modifier = Modifier.width(DP_8))
 
                 Box(
                     modifier = Modifier
-                        .clip(RoundedCornerShape(2.dp))
+                        .clip(RoundedCornerShape(DP_2))
                         .background(LighterGray)
-                        .width(56.dp)
-                        .height(15.dp)
+                        .width(DP_56)
+                        .height(DP_15)
                 )
             }
 
         }
 
-        Spacer(modifier = Modifier.height(12.dp))
+        Spacer(modifier = Modifier.height(DP_12))
 
         Column(
             horizontalAlignment = Alignment.End,
@@ -101,16 +101,16 @@ fun BottomSheetShimmer(brush: Brush) {
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(200.dp)
+                    .height(DP_200)
                     .background(LighterGray)
             )
 
-            Spacer(modifier = Modifier.height(8.dp))
+            Spacer(modifier = Modifier.height(DP_8))
 
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(150.dp)
+                    .height(DP_150)
                     .background(LighterGray)
             )
         }
@@ -121,16 +121,16 @@ fun BottomSheetShimmer(brush: Brush) {
                     .clip(CircleShape)
                     .background(LighterGray)
                     .weight(1f)
-                    .height(45.dp)
+                    .height(DP_45)
             )
 
-            Spacer(modifier = Modifier.width(8.dp))
+            Spacer(modifier = Modifier.width(DP_8))
 
             Box(
                 modifier = Modifier
                     .clip(CircleShape)
                     .weight(1f)
-                    .height(45.dp)
+                    .height(DP_45)
                     .background(LighterGray)
             )
         }

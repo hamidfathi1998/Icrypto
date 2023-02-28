@@ -4,6 +4,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
+import ir.hfathi.icrypto.ui.theme.ShimmerAnimRepeatCount
 import ir.hfathi.icrypto.ui.theme.ShimmerAnimationTheme
 
 @Composable
@@ -11,7 +12,7 @@ fun HomeShimmerContent(){
     ShimmerAnimationTheme(darkTheme = false) {
         Surface(color = MaterialTheme.colors.background) {
             LazyColumn {
-                repeat(10) {
+                repeat(ShimmerAnimRepeatCount) {
                     item {
                         HomeShimmerAnimation()
                     }

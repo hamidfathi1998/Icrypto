@@ -26,6 +26,7 @@ class CoinStreamModelConvertor {
             )
         )
 
-    fun set(response: String): CoinPriceResponseModel = Gson().fromJson(response, BaseStreamResponseModel::class.java).data
+    fun set(response: String): CoinPriceResponseModel =
+        Gson().fromJson(response, BaseStreamResponseModel::class.java).data
 }
 

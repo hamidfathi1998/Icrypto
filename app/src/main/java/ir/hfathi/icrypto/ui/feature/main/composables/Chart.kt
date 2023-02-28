@@ -6,16 +6,17 @@ import androidx.compose.foundation.layout.requiredHeight
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.toArgb
-import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import com.github.mikephil.charting.charts.LineChart
 import com.github.mikephil.charting.data.Entry
-import ir.hfathi.icrypto.model.model.dto.ChartDto
+import ir.hfathi.icrypto.R
+import ir.hfathi.icrypto.model.model.response.ChartResponseModel
+import ir.hfathi.icrypto.ui.theme.DP_200
 import ir.hfathi.icrypto.ui.theme.TextWhite
 
 @Composable
 fun Chart(
-    coinChartData: ChartDto?,
+    coinChartData: ChartResponseModel?,
     oneDayChange: Double,
     context: Context
 ) {
@@ -37,7 +38,7 @@ fun Chart(
             val lineDataSet =
                 ChartScreenViewState().getLineDataSet(
                     lineData = dataSet,
-                    label = "chart values",
+                    label = context.getString(R.string.chartValues),
                     oneDayChange = oneDayChange,
                     context = context
                 )
@@ -61,7 +62,7 @@ fun Chart(
         },
         modifier = Modifier
             .fillMaxWidth()
-            .requiredHeight(200.dp)
+            .requiredHeight(DP_200)
     )
 }
 

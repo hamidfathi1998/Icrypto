@@ -11,14 +11,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import ir.hfathi.icrypto.R
-import ir.hfathi.icrypto.ui.theme.CustomGreen
-import ir.hfathi.icrypto.ui.theme.CustomRed
-import ir.hfathi.icrypto.ui.theme.LighterGray
-import ir.hfathi.icrypto.ui.theme.TextWhite
+import ir.hfathi.icrypto.model.api.CoinPeriod
+import ir.hfathi.icrypto.ui.theme.*
 
 @Composable
 fun CoinDetailSection(
@@ -28,7 +26,7 @@ fun CoinDetailSection(
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(top = 8.dp),
+            .padding(top = DP_8),
         contentAlignment = Alignment.Center
     ) {
         Column(
@@ -43,17 +41,17 @@ fun CoinDetailSection(
             )
 
             Row(
-                Modifier.padding(horizontal = 5.dp)
+                Modifier.padding(horizontal = DP_5)
             ) {
                 Box(
                     modifier = Modifier
-                        .clip(RoundedCornerShape(3.dp))
+                        .clip(RoundedCornerShape(DP_3))
                         .background(LighterGray)
-                        .size(21.dp)
+                        .size(20.dp)
                 ) {
                     Text(
-                        text = "24h",
-                        fontSize = 10.sp,
+                        text = CoinPeriod.PERIOD_24h.period,
+                        fontSize = SP_10,
                         fontWeight = FontWeight.Bold,
                         color = TextWhite,
                         modifier = Modifier
@@ -71,10 +69,10 @@ fun CoinDetailSection(
                         painterResource(id = R.drawable.ic_arrow_negative)
                     else
                         painterResource(id = R.drawable.ic_arrow_positive),
-                    contentDescription = "arrow",
+                    contentDescription = stringResource(id = R.string.arrow),
                     modifier = Modifier
-                        .padding(4.dp)
-                        .size(12.dp)
+                        .padding(DP_4)
+                        .size(DP_12)
                 )
             }
 

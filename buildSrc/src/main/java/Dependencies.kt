@@ -27,6 +27,7 @@ object Dependencies {
             const val lifecycleViewModelCompose = "2.6.0-alpha01"
             const val lifecycle = "2.5.1"
             const val lifecycleExtensions = "2.2.0"
+            const val splashScreenVersion = "1.0.0-beta02"
         }
 
         const val coreKts = "androidx.core:core-ktx:${Version.coreKtx}"
@@ -48,6 +49,9 @@ object Dependencies {
         // Navigation
         const val navigationCompose = "androidx.navigation:navigation-compose:${Version.lifecycle}"
         const val lifecycleViewModelCompose = "androidx.lifecycle:lifecycle-viewmodel-compose:${Version.lifecycleViewModelCompose}"
+
+        // Splash Screen
+        const val splashScreen = "androidx.core:core-splashscreen:${Version.splashScreenVersion}"
     }
 
     object ThirdParty {

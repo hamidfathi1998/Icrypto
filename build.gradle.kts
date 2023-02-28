@@ -1,8 +1,4 @@
 buildscript {
-val compose_version by extra("1.1.1")
-    //    ext {
-       val compose_ui_version = "1.1.1"
-//    }
     repositories {
         mavenCentral()
         maven("https://jitpack.io")

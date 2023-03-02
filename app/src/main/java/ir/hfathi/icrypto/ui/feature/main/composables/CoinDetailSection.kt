@@ -15,7 +15,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import ir.hfathi.icrypto.R
-import ir.hfathi.icrypto.model.api.CoinPeriod
+import ir.hfathi.icrypto.model.api.enumType.CoinPeriod
 import ir.hfathi.icrypto.ui.theme.*
 
 @Composable
@@ -50,7 +50,7 @@ fun CoinDetailSection(
                         .size(20.dp)
                 ) {
                     Text(
-                        text = CoinPeriod.PERIOD_24h.period,
+                        text = CoinPeriod.PERIOD_24H.period,
                         fontSize = SP_10,
                         fontWeight = FontWeight.Bold,
                         color = TextWhite,

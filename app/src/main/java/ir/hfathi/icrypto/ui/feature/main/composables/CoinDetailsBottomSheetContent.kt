@@ -11,9 +11,9 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.unit.dp
-import ir.hfathi.icrypto.model.api.CoinCurrency
-import ir.hfathi.icrypto.model.model.response.ChartResponseModel
-import ir.hfathi.icrypto.model.model.response.CoinDetailResponseModel
+import ir.hfathi.icrypto.model.api.enumType.CoinCurrency
+import ir.hfathi.icrypto.model.model.response.chart.ChartResponseModel
+import ir.hfathi.icrypto.model.model.response.coin.CoinDetailResponseModel
 import ir.hfathi.icrypto.ui.feature.home.HomeViewModel
 import ir.hfathi.icrypto.ui.feature.main.composables.shimmer.BottomSheetShimmerContent
 import org.koin.androidx.compose.getViewModel

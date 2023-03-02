@@ -1,24 +1,62 @@
 package ir.hfathi.icrypto.ui.feature.news.composables
 
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material.Text
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.*
+import androidx.compose.material.ExperimentalMaterialApi
+import androidx.compose.material.Scaffold
+import androidx.compose.material.rememberScaffoldState
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.style.TextAlign
-import ir.hfathi.icrypto.ui.theme.DP_20
-import ir.hfathi.icrypto.ui.theme.TextWhite
+import com.google.accompanist.swiperefresh.SwipeRefresh
+import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
+import ir.hfathi.icrypto.ui.feature.common.NetworkError
+import ir.hfathi.icrypto.ui.feature.news.NewsContract
+import ir.hfathi.icrypto.ui.feature.news.NewsViewModel
+import ir.hfathi.icrypto.ui.feature.news.composables.shimmer.NewsShimmerContent
+import ir.hfathi.icrypto.ui.theme.DP_12
+import ir.hfathi.icrypto.ui.theme.DarkGray
+
+@ExperimentalMaterialApi
+@Composable
+fun NewsScreen(
+    onEventSent: (event: NewsContract.Event) -> Unit,
+    state: NewsContract.State
+) {
+    val scaffoldState = rememberScaffoldState()
+    Scaffold(
+        scaffoldState = scaffoldState,
+        topBar = {
+            NewsScreenTopBar()
+        },
+    ) { padding ->
+        when {
+            state.isLoading || state.isPullToRefresh -> NewsShimmerContent()
+            state.isError -> NetworkError { onEventSent(NewsContract.Event.Retry) }
+            else -> NewsScreenContent(
+                contentPadding = padding,
+                onEventSent = onEventSent,
+                state = state
+            )
+        }
+    }
+}
 
 @Composable
-fun NewsScreen() {
-    Text(
-        text = stringResource(id = ir.hfathi.icrypto.R.string.newsScreen),
-        color = TextWhite,
-        textAlign = TextAlign.Center,
+fun NewsScreenContent(
+    onEventSent: (event: NewsContract.Event) -> Unit,
+    state: NewsContract.State,
+    contentPadding: PaddingValues
+) {
+    Box(
         modifier = Modifier
-            .fillMaxWidth()
-            .padding(horizontal = DP_20)
-    )
-
+            .background(DarkGray)
+            .fillMaxSize()
+            .padding(DP_12)
+    ) {
+        SwipeRefresh(
+            state = rememberSwipeRefreshState(isRefreshing = state.isPullToRefresh),
+            onRefresh = { onEventSent(NewsContract.Event.PullToRefresh) }) {
+            NewsList(state = state)
+        }
+    }
 }

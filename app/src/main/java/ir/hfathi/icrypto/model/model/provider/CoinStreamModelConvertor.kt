@@ -4,8 +4,8 @@ import com.google.gson.Gson
 import ir.hfathi.icrypto.model.model.request.CoinArgsType
 import ir.hfathi.icrypto.model.model.request.OpType
 import ir.hfathi.icrypto.model.model.request.SocketCoinRequestModel
-import ir.hfathi.icrypto.model.model.response.BaseStreamResponseModel
-import ir.hfathi.icrypto.model.model.response.CoinPriceResponseModel
+import ir.hfathi.icrypto.model.model.response.stream.BaseStreamResponseModel
+import ir.hfathi.icrypto.model.model.response.coin.CoinPriceResponseModel
 
 class CoinStreamModelConvertor {
     fun get(): String =

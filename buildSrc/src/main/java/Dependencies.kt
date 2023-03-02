@@ -39,7 +39,7 @@ object Dependencies {
         const val composeUiTooling = "androidx.compose.ui:ui-tooling:${Version.compose}"
         const val composeUiToolingPreview = "androidx.compose.ui:ui-tooling-preview:${Version.compose}"
         const val composeMaterial = "androidx.compose.material:material:${Version.materialCompose}"
-        const val composeMaterialIconsExtended = "androidx.compose.material:material-icons-extended:${Version.materialCompose}"
+        const val composeMaterialIconsExtended = "androidx.compose.material:material-icons-extended:${Version.compose}"
 
         // Lifecycle
         const val lifecycleViewModelKtx = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Version.lifecycle}"
@@ -77,8 +77,8 @@ object Dependencies {
         const val retrofit = "com.squareup.retrofit2:retrofit:${Version.retrofit}"
         const val retrofitConverterGson = "com.squareup.retrofit2:converter-gson:${Version.retrofit}"
         const val okhttp = "com.squareup.okhttp3:okhttp:${Version.okhttp}"
-
         const val androidMaterial = "com.google.android.material:material:${Version.androidMaterial}"
+
         const val coilCompose = "io.coil-kt:coil-compose:${Version.coilCompose}"
 
         // Koin

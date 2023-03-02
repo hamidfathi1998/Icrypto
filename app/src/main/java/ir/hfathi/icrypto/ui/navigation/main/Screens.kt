@@ -1,9 +1,9 @@
 package ir.hfathi.icrypto.ui.navigation.main
 
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Favorite
+import androidx.compose.material.icons.filled.Feed
+import androidx.compose.material.icons.filled.Grading
 import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.outlined.Info
 import androidx.compose.ui.graphics.vector.ImageVector
 
 sealed class Screens(
@@ -14,7 +14,7 @@ sealed class Screens(
     object CoinsWatchList: Screens(
         route = ScreensRoute.WATCH_LIST.route,
         title = ScreensRoute.WATCH_LIST.title,
-        icon = Icons.Default.Favorite
+        icon = Icons.Default.Grading
     )
 
     object CoinsScreen: Screens(
@@ -26,7 +26,7 @@ sealed class Screens(
     object CoinsNews: Screens(
         route = ScreensRoute.NEWS.route,
         title = ScreensRoute.NEWS.title,
-        icon = Icons.Outlined.Info
+        icon = Icons.Default.Feed
     )
 
 }

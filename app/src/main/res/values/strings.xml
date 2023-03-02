@@ -14,7 +14,9 @@
     <string name="availableSupply">Available supply</string>
     <string name="totalSupply">Total supply</string>
     <string name="newsScreen">News Screen</string>
+    <string name="news">News</string>
     <string name="watchListScreen">WatchList Screen</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="filter">filter</string>
 
 </resources>

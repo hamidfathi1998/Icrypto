@@ -1,22 +1,26 @@
 package ir.hfathi.icrypto.ui.navigation.main
 
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import ir.hfathi.icrypto.ui.feature.home.HomeViewModel
 import ir.hfathi.icrypto.ui.feature.home.composables.HomeScreen
+import ir.hfathi.icrypto.ui.feature.news.NewsViewModel
 import ir.hfathi.icrypto.ui.feature.news.composables.NewsScreen
 import ir.hfathi.icrypto.ui.feature.watchList.composables.WatchListScreen
 import ir.hfathi.icrypto.ui.navigation.root.Graph
 import org.koin.androidx.compose.getViewModel
 
+@OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun MainGraph(
     navController: NavHostController,
     openBottomSheet: () -> Unit
 ) {
     val homeViewModel = getViewModel<HomeViewModel>()
+    val newsViewModel = getViewModel<NewsViewModel>()
 
     NavHost(
         navController = navController,
@@ -42,7 +46,10 @@ fun MainGraph(
         composable(
             route = Screens.CoinsNews.route
         ) {
-            NewsScreen()
+            NewsScreen(
+                state = newsViewModel.viewState.value,
+                onEventSent = { event -> newsViewModel.setEvent(event) },
+            )
         }
 
     }

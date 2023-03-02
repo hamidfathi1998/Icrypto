@@ -1,4 +1,4 @@
-package ir.hfathi.icrypto.model.model.response
+package ir.hfathi.icrypto.model.model.response.coin
 
 data class CoinPriceResponseModel(
     var symbol:String = String(),

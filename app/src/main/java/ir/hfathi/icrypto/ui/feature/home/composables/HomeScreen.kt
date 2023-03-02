@@ -21,6 +21,7 @@ fun HomeScreen(
     onEventSent: (event: HomeContract.Event) -> Unit,
     openBottomSheet: () -> Unit
 ) {
+
     val scaffoldState = rememberScaffoldState()
 
     Scaffold(
@@ -54,16 +55,14 @@ fun HomeScreenContent(
             .background(DarkGray)
             .fillMaxSize()
     ) {
-        Column {
-            SwipeRefresh(
-                state = rememberSwipeRefreshState(isRefreshing = state.isPullToRefresh),
-                onRefresh = { onEventSent(HomeContract.Event.PullToRefresh) }) {
-                CoinList(
-                    state = state,
-                    onEventSent = onEventSent,
-                    openBottomSheet = openBottomSheet
-                )
-            }
+        SwipeRefresh(
+            state = rememberSwipeRefreshState(isRefreshing = state.isPullToRefresh),
+            onRefresh = { onEventSent(HomeContract.Event.PullToRefresh) }) {
+            CoinList(
+                state = state,
+                onEventSent = onEventSent,
+                openBottomSheet = openBottomSheet
+            )
         }
     }
 }

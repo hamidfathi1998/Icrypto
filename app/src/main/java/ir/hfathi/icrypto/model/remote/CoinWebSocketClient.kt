@@ -1,7 +1,7 @@
 package ir.hfathi.icrypto.model.remote
 
 import ir.hfathi.icrypto.model.model.provider.CoinStreamModelConvertor
-import ir.hfathi.icrypto.model.model.response.CoinPriceResponseModel
+import ir.hfathi.icrypto.model.model.response.coin.CoinPriceResponseModel
 import ir.hfathi.icrypto.model.remote.SocketApi.SOCKET_URL
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

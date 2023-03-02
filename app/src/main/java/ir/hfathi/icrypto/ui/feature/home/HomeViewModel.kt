@@ -1,8 +1,8 @@
 package ir.hfathi.icrypto.ui.feature.home
 
 import androidx.lifecycle.viewModelScope
-import ir.hfathi.icrypto.model.model.response.CoinPriceResponseModel
-import ir.hfathi.icrypto.model.model.response.Coins
+import ir.hfathi.icrypto.model.model.response.coin.CoinPriceResponseModel
+import ir.hfathi.icrypto.model.model.response.coin.Coins
 import ir.hfathi.icrypto.model.repository.CoinRepository
 import ir.hfathi.icrypto.ui.base.BaseViewModel
 import kotlinx.coroutines.flow.MutableStateFlow

@@ -18,8 +18,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import coil.compose.AsyncImage
 import ir.hfathi.icrypto.R
-import ir.hfathi.icrypto.model.model.response.Coin
-import ir.hfathi.icrypto.model.model.response.toCoins
+import ir.hfathi.icrypto.model.model.response.coin.Coin
+import ir.hfathi.icrypto.model.model.response.coin.toCoins
 import ir.hfathi.icrypto.ui.feature.home.HomeContract
 import ir.hfathi.icrypto.ui.feature.home.HomeViewModel
 import ir.hfathi.icrypto.ui.theme.*

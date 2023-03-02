@@ -10,7 +10,7 @@ import androidx.compose.ui.viewinterop.AndroidView
 import com.github.mikephil.charting.charts.LineChart
 import com.github.mikephil.charting.data.Entry
 import ir.hfathi.icrypto.R
-import ir.hfathi.icrypto.model.model.response.ChartResponseModel
+import ir.hfathi.icrypto.model.model.response.chart.ChartResponseModel
 import ir.hfathi.icrypto.ui.theme.DP_200
 import ir.hfathi.icrypto.ui.theme.TextWhite
 

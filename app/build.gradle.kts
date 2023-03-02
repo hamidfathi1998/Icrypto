@@ -59,6 +59,7 @@ dependencies {
 
     implementation(Dependencies.Android.composeUi)
     implementation(Dependencies.Android.composeMaterial)
+    implementation(Dependencies.Android.composeMaterialIconsExtended)
     implementation(Dependencies.Android.composeUiTooling)
     implementation(Dependencies.Android.composeUiToolingPreview)
 

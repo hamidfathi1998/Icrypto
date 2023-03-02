@@ -5,6 +5,7 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
+val LighterGray2 = Color(0xFF616161)
 val LighterGray = Color(0xFF262532)
 val TextWhite = Color(0xFFEEEEEE)
 val DarkGray = Color(0xFF161520)

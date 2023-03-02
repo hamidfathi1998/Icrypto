@@ -32,7 +32,7 @@
 - ICrypto is made using Kotlin & Jetpack Compose and following Modern Android Development practices.
 - ICrypto uses chart visuals library to view market changes by [MPAndroidCharts](https://github.com/PhilJay/MPAndroidChart)
 - ICrypto uses Kotlin Coroutines and Flow to handle all asynchronous tasks.
--
+
 ## Built With 🛠
 - [Kotlin](https://kotlinlang.org/) - First class and official programming language for Android development.
 - [Jetpack Compose](https://developer.android.com/jetpack/compose) - Jetpack Compose is Android’s modern toolkit for building native UI

@@ -102,4 +102,5 @@ dependencies {
     debugImplementation(Dependencies.AndroidTest.composeUiTooling)
     debugImplementation(Dependencies.AndroidTest.composeUiTestManifest)
 
+    testImplementation("io.mockk:mockk:1.12.4")
 }

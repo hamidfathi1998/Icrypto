@@ -38,4 +38,5 @@ interface CoinApi {
         @Query("limit") limit: Int = 20,
         @Query("skip") skip: Int = 0
     ): NewsResponseModel
+
 }

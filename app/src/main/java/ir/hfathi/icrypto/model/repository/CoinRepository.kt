@@ -1,5 +1,6 @@
 package ir.hfathi.icrypto.model.repository
 
+import ir.hfathi.icrypto.model.api.enumType.NewsFilterType
 import ir.hfathi.icrypto.model.model.response.chart.ChartResponseModel
 import ir.hfathi.icrypto.model.model.response.coin.CoinDetailResponseModel
 import ir.hfathi.icrypto.model.model.response.coin.CoinsResponseModel
@@ -15,7 +16,7 @@ interface CoinRepository {
 
     suspend fun getChartsData(coinId: String): Result<ChartResponseModel>
 
-    suspend fun getNewsData(): Result<NewsResponseModel>
+    suspend fun getNewsData(filter:String = NewsFilterType.TRENDING.value): Result<NewsResponseModel>
 
     fun getStreamCryptoPrice(data: MutableStateFlow<CoinPriceResponseModel>)
 }

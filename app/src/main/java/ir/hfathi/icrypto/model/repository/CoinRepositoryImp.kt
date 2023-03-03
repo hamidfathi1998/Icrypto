@@ -27,8 +27,8 @@ class CoinRepositoryImp(
     override suspend fun getChartsData(coinId: String): Result<ChartResponseModel> =
         makeApiCall(dispatcher = dispatcher) { coinApi.getChartsData(coinId = coinId) }
 
-    override suspend fun getNewsData(): Result<NewsResponseModel> =
-        makeApiCall(dispatcher = dispatcher) { coinApi.getNews(filter = NewsFilterType.TRENDING.value) }
+    override suspend fun getNewsData(filter:String): Result<NewsResponseModel> =
+        makeApiCall(dispatcher = dispatcher) { coinApi.getNews(filter = filter) }
 
     override fun getStreamCryptoPrice(data: MutableStateFlow<CoinPriceResponseModel>) {
         val webSocket = CoinWebSocketClient(data = data)

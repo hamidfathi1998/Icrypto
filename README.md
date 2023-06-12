@@ -23,7 +23,7 @@
 
 # Architecture
 
-"ToDo" is based on the MVI architecture pattern.
+"ICrypto" is based on the MVI architecture pattern.
 
 <img src="/preview/mvi-pattern.png"/>
 
